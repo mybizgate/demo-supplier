@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-MY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="build-version" content="__BUILD_VERSION__">
+  <meta name="author" content="Niagova">
+  <title>Supplier Hub: modest fashion to reserve on WhatsApp</title>
+  <meta name="description" content="See how each piece from Supplier Hub falls, choose your colour and size, and reserve it on WhatsApp. The boutique confirms stock and payment with you.">
+  <link rel="canonical" href="https://demo-supplier.niagova.com/04-boutique/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Supplier Hub: modest fashion to reserve on WhatsApp">
+  <meta property="og:description" content="See how each piece from Supplier Hub falls, choose your colour and size, and reserve it on WhatsApp. The boutique confirms stock and payment with you.">
+  <meta property="og:url" content="https://demo-supplier.niagova.com/04-boutique/">
+  <meta property="og:image" content="https://demo-supplier.niagova.com/04-boutique/images/look-1.webp">
+  <meta name="theme-color" content="#F3F0F5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..600&family=Jost:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css?v=__BUILD_VERSION__">
+  <script src="index.js?v=__BUILD_VERSION__" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the collection</a>
+
+  <!-- The pinking-shear edge that makes each colour chip read as a cut fabric swatch. -->
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <clipPath id="pinked" clipPathUnits="objectBoundingBox"><polygon points="0,0 0.083,0.075 0.167,0 0.25,0.075 0.333,0 0.417,0.075 0.5,0 0.583,0.075 0.667,0 0.75,0.075 0.833,0 0.917,0.075 1,0 0.925,0.083 1,0.167 0.925,0.25 1,0.333 0.925,0.417 1,0.5 0.925,0.583 1,0.667 0.925,0.75 1,0.833 0.925,0.917 1,1 0.917,0.925 0.833,1 0.75,0.925 0.667,1 0.583,0.925 0.5,1 0.417,0.925 0.333,1 0.25,0.925 0.167,1 0.083,0.925 0,1 0.075,0.917 0,0.833 0.075,0.75 0,0.667 0.075,0.583 0,0.5 0.075,0.417 0,0.333 0.075,0.25 0,0.167 0.075,0.083"/></clipPath>
+    </defs>
+  </svg>
+
+  <header class="top-bar">
+    <a class="wordmark" href="#top">Supplier Hub</a>
+    <nav class="top-nav" aria-label="Shop">
+      <a class="top-link" href="#all-pieces">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 4.5h6v6h-6zM13.5 4.5h6v6h-6zM4.5 13.5h6v6h-6zM13.5 13.5h6v6h-6z"/></svg>
+        <span class="top-link-text">All pieces</span>
+      </a>
+      <button class="top-link bag-button" id="bag-open" type="button" aria-haspopup="dialog" aria-label="Open bag, 0 items">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.5 8.5h13l1 12h-15zM8.5 8.5V7a3.5 3.5 0 0 1 7 0v1.5"/></svg>
+        <span class="top-link-text">Bag</span>
+        <span class="bag-count" id="bag-count">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="opening" id="top" aria-labelledby="opening-title">
+      <div class="opening-photo">
+        <img src="images/look-1.webp" width="933" height="1400" fetchpriority="high" alt="Woman in a sage crepe baju kurung and matching shawl, standing against a soft lilac-grey wall.">
+      </div>
+      <div class="opening-panel">
+        <h1 id="opening-title">See how each piece falls, then reserve yours on WhatsApp.</h1>
+        <a class="button button-light" id="opening-cta" href="#looks">See the collection</a>
+        <a class="text-button" href="#all-pieces">View all pieces at once</a>
+      </div>
+    </section>
+
+    <div class="looks" id="looks"></div>
+
+    <noscript>
+      <p class="noscript-note">Choosing colours and sizes needs JavaScript. You can still <a href="https://wa.me/601158121239">message Supplier Hub on WhatsApp</a> to ask about any piece.</p>
+    </noscript>
+
+    <section class="all-pieces" id="all-pieces" aria-labelledby="all-pieces-title">
+      <div class="section-head">
+        <h2 id="all-pieces-title">All pieces</h2>
+        <p>Tap a piece to see it full height and choose your colour and size.</p>
+      </div>
+      <ul class="piece-grid" id="piece-grid"></ul>
+    </section>
+
+    <section class="reserving" aria-labelledby="reserving-title">
+      <img class="reserving-photo" src="images/fabric.webp" width="1024" height="1024" loading="lazy" alt="Close-up of sage and mulberry crepe folded against each other, showing the fine grain of the cloth.">
+      <div class="reserving-text">
+        <h2 id="reserving-title">How reserving works</h2>
+        <ol class="steps">
+          <li>Add the pieces you like to your bag, with your colour and size.</li>
+          <li>Send your reservation on WhatsApp. You pay nothing on this site.</li>
+          <li>Supplier Hub confirms stock and payment with you by WhatsApp. Ask for a close-up of the fabric in daylight before you pay.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <section class="niagova-band" aria-labelledby="niagova-title">
+  <div class="niagova-band-inner">
+    <div>
+      <img src="images/niagova-logo-on-dark.svg" alt="Niagova" width="150" height="36" loading="lazy">
+      <p class="niagova-band-kicker">This demo website is built by Niagova</p>
+      <h2 id="niagova-title">Want a website like this for your business?</h2>
+      <p class="niagova-band-copy">Websites, booking systems and business apps for Malaysian SMEs. Every package and price is on niagova.com.</p>
+    </div>
+    <a class="niagova-band-cta" href="https://niagova.com/#pricing" target="_blank" rel="noopener">View Niagova packages <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-main">
+      <p class="footer-name">Supplier Hub</p>
+      <address class="footer-contact">
+        <a href="https://wa.me/601158121239">WhatsApp +601158121239</a>
+        <a href="mailto:sales@niagova.com">sales@niagova.com</a>
+        <span>Kampung Pandan, 2A Lorong Delapan, 55100 Kuala Lumpur</span>
+        <span>9.00am - 6.00pm</span>
+      </address>
+      <div class="footer-social">
+        
+        
+        
+      </div>
+    </div>
+    <div class="footer-small">
+      <p>Products, prices, measurements and stock on this site are sample content.</p>
+      <p><a href="https://niagova.com/" rel="noopener">Website by Niagova</a></p>
+    </div>
+  </footer>
+
+  <dialog class="sheet" id="size-sheet" aria-labelledby="size-title">
+    <div class="sheet-frame">
+      <header class="sheet-head">
+        <h2 id="size-title">Size guide</h2>
+        <button class="icon-button" type="button" data-close aria-label="Close size guide">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </header>
+      <div class="sheet-body" tabindex="-1">
+        <img class="size-photo" src="images/fabric.webp" width="1024" height="1024" loading="lazy" alt="Sage and mulberry crepe folds, close up.">
+        <table class="size-table">
+          <caption>Sample body measurements, in cm</caption>
+          <thead>
+            <tr><th scope="col">Size</th><th scope="col">Bust</th><th scope="col">Waist</th><th scope="col">Hip</th><th scope="col">Length</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">XS</th><td>84</td><td>68</td><td>92</td><td>134</td></tr>
+            <tr><th scope="row">S</th><td>88</td><td>72</td><td>96</td><td>136</td></tr>
+            <tr><th scope="row">M</th><td>94</td><td>78</td><td>102</td><td>138</td></tr>
+            <tr><th scope="row">L</th><td>100</td><td>84</td><td>108</td><td>140</td></tr>
+            <tr><th scope="row">XL</th><td>106</td><td>90</td><td>114</td><td>142</td></tr>
+          </tbody>
+        </table>
+        <h3>How to measure</h3>
+        <dl class="measure-list">
+          <div><dt>Bust</dt><dd>Around the fullest part, with the tape level across your back.</dd></div>
+          <div><dt>Waist</dt><dd>Around the narrowest part, just above your navel.</dd></div>
+          <div><dt>Hip</dt><dd>Around the fullest part, with your feet together.</dd></div>
+          <div><dt>Length</dt><dd>From the top of your shoulder down to where the hem should sit.</dd></div>
+        </dl>
+        <p class="sheet-note">Measure over light clothing. If you are between two sizes, choose the larger one or ask Supplier Hub on WhatsApp.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="sheet" id="bag-sheet" aria-labelledby="bag-title">
+    <div class="sheet-frame">
+      <header class="sheet-head">
+        <h2 id="bag-title">Your bag</h2>
+        <button class="icon-button" type="button" data-close aria-label="Close bag">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </header>
+      <form class="sheet-form" id="reserve-form" novalidate>
+        <div class="sheet-body" tabindex="-1">
+          <div class="bag-empty" id="bag-empty" tabindex="-1">
+            <p>Your bag is empty. Choose a colour and size on any look, then tap Add to bag.</p>
+            <a class="button button-primary" id="bag-empty-cta" href="#looks">See the collection</a>
+          </div>
+          <ul class="bag-lines" id="bag-lines"></ul>
+          <div class="bag-checkout" id="bag-checkout">
+            <p class="bag-total"><span>Total before delivery</span><span id="bag-total"></span></p>
+            <div class="field">
+              <label for="customer-name">Your name</label>
+              <input id="customer-name" name="customer-name" type="text" autocomplete="name" aria-describedby="customer-name-error">
+              <p class="field-error" id="customer-name-error" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="customer-area">Delivery area</label>
+              <input id="customer-area" name="customer-area" type="text" autocomplete="address-level2" aria-describedby="customer-area-hint customer-area-error">
+              <p class="field-hint" id="customer-area-hint">Your town and state, such as Shah Alam, Selangor.</p>
+              <p class="field-error" id="customer-area-error" role="alert"></p>
+            </div>
+          </div>
+        </div>
+        <div class="sheet-foot" id="bag-foot">
+          <p class="sheet-note" id="reserve-note">Supplier Hub confirms stock and payment with you by WhatsApp. You pay nothing on this site.</p>
+          <p class="reserve-status" id="reserve-status" hidden>Your message is ready in WhatsApp. If it did not open, <a id="reserve-link" href="#" target="_blank" rel="noopener">open WhatsApp again</a>.</p>
+          <button class="button button-primary" type="submit">Reserve on WhatsApp</button>
+        </div>
+      </form>
+      <p class="visually-hidden" id="sheet-live" aria-live="polite"></p>
+    </div>
+  </dialog>
+
+  <dialog class="sheet sheet-photo" id="photo-sheet" aria-labelledby="photo-title">
+    <div class="sheet-frame">
+      <header class="sheet-head">
+        <h2 id="photo-title">Full length</h2>
+        <button class="icon-button" type="button" data-close aria-label="Close full length photo">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </header>
+      <div class="photo-stage"><img id="photo-image" src="images/look-1.webp" width="933" height="1400" loading="lazy" alt=""></div>
+    </div>
+  </dialog>
+
+  <p class="visually-hidden" id="page-live" aria-live="polite"></p>
+</body>
+</html>

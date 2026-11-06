@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-MY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="build-version" content="__BUILD_VERSION__">
+  <meta name="author" content="Niagova">
+  <title>Supplier Hub: car spare parts checked against your car</title>
+  <meta name="description" content="Choose your car and see which brake, filter, battery, suspension, belt and ignition parts fit it. Send your list to Supplier Hub on WhatsApp and we confirm fitment and stock before you pay.">
+  <link rel="canonical" href="https://demo-supplier.niagova.com/02-spareparts/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Supplier Hub: car spare parts checked against your car">
+  <meta property="og:description" content="Choose your car and see which brake, filter, battery, suspension, belt and ignition parts fit it. Send your list to Supplier Hub on WhatsApp and we confirm fitment and stock before you pay.">
+  <meta property="og:url" content="https://demo-supplier.niagova.com/02-spareparts/">
+  <meta property="og:image" content="https://demo-supplier.niagova.com/02-spareparts/images/hero.webp">
+  <meta name="theme-color" content="#E9EDEF">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='8' width='30' height='16' rx='3' fill='%231F2A30'/%3E%3Cpath d='M8 16h16' stroke='%23fff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Saira+Condensed:wght@600;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=__BUILD_VERSION__">
+  <script src="index.js?v=__BUILD_VERSION__" defer></script>
+</head>
+<body>
+  <svg class="icon-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <defs>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></symbol>
+      <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.3 9.4a2.8 2.8 0 1 1 4.3 2.4c-1 .7-1.6 1.2-1.6 2.4"/><path d="M12 17.2v.1"/></symbol>
+      <symbol id="i-plate" viewBox="0 0 24 24"><rect x="2.5" y="7" width="19" height="10" rx="1.5"/><path d="M7 12h10"/></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 8L12 3.5 20.5 8v8L12 20.5 3.5 16z"/><path d="M3.5 8L12 12.5 20.5 8"/><path d="M12 12.5v8"/></symbol>
+      <symbol id="i-cross" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l7 7"/><path d="M15.5 8.5l-7 7"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13"/><path d="M18.5 5.5l-13 13"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 5.5l6.5 6.5L9 18.5"/></symbol>
+      <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5.5L8.5 12l6.5 6.5"/></symbol>
+      <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5.5 12h13"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5.5 12h13"/><path d="M12 5.5v13"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 19.5l1.3-4A8 8 0 1 1 8.6 19z"/></symbol>
+      <symbol id="i-all" viewBox="0 0 24 24"><path d="M4.5 6.5h15"/><path d="M4.5 12h15"/><path d="M4.5 17.5h15"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to parts search</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <p class="site-name">Supplier Hub</p>
+      <button class="mini-plate" id="mini-plate" type="button" data-action="open-picker" data-fk="mini-plate" hidden></button>
+      <a class="header-chat" href="https://wa.me/601158121239" target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+        WhatsApp us
+      </a>
+      <div class="enquiry-bar" id="enquiry-bar">
+        <p class="enquiry-bar-text">
+          <span class="enquiry-bar-count" id="bar-count">No parts yet</span>
+          <span class="enquiry-bar-total" id="bar-total">Add parts to ask us</span>
+        </p>
+        <button class="btn btn-bar" id="bar-button" type="button" data-action="open-enquiry" data-fk="bar-button">Review parts</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="layout">
+      <div class="rail">
+        <div class="hero">
+          <h1>Does it fit your car?</h1>
+          <img class="hero-photo" src="images/hero.webp" width="933" height="1400" fetchpriority="high" decoding="async"
+            alt="A mechanic in grey overalls checks a new brake disc at a parts counter, with shelves of plain boxes behind him.">
+        </div>
+
+        <div class="rail-sticky">
+          <section class="plate-block" aria-label="My car">
+            <button class="plate-button" id="plate-button" type="button" data-action="open-picker" data-fk="plate-button">
+              <span class="visually-hidden">My car: </span>
+              <span class="plate" id="plate-text">MY CAR</span>
+              <span class="plate-action" id="plate-action">Choose your car</span>
+            </button>
+            <p class="plate-status" id="plate-status">Pick make, model and year. Every part below then says if it fits.</p>
+          </section>
+
+          <form class="search" role="search" id="search-form">
+            <label class="search-label" for="search-input">Search by part name or part number</label>
+            <div class="search-field">
+              <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+              <input id="search-input" type="search" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" placeholder="Brake pad or BR-4412-F">
+              <button class="search-clear" id="search-clear" type="button" data-action="clear-search" aria-label="Clear search" hidden>
+                <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <div class="chips" id="chips" role="group" aria-label="Filter parts by category"></div>
+
+        </div>
+      </div>
+
+      <section class="results" aria-labelledby="results-title">
+        <div class="results-head">
+          <h2 id="results-title">All parts</h2>
+          <p class="results-count" id="results-count"></p>
+        </div>
+        <div class="list-columns" aria-hidden="true">
+          <span>Part</span><span>Fit and stock</span><span>Price</span>
+        </div>
+        <div id="part-list">
+          <noscript>
+            <p class="empty">This parts list needs JavaScript. Send us your car details on <a href="https://wa.me/601158121239">WhatsApp</a> and we will check the part for you.</p>
+          </noscript>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="niagova-band" aria-labelledby="niagova-title">
+  <div class="niagova-band-inner">
+    <div>
+      <img src="images/niagova-logo-on-dark.svg" alt="Niagova" width="150" height="36" loading="lazy">
+      <p class="niagova-band-kicker">This demo website is built by Niagova</p>
+      <h2 id="niagova-title">Want a website like this for your business?</h2>
+      <p class="niagova-band-copy">Websites, booking systems and business apps for Malaysian SMEs. Every package and price is on niagova.com.</p>
+    </div>
+    <a class="niagova-band-cta" href="https://niagova.com/#pricing" target="_blank" rel="noopener">View Niagova packages <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-about">
+        <h2>Supplier Hub</h2>
+        <p>Send us your car and the parts you need. We confirm fitment and stock on WhatsApp before you pay.</p>
+      </div>
+      <ul class="footer-contact">
+        <li><a href="https://wa.me/601158121239" target="_blank" rel="noopener">WhatsApp +601158121239</a></li>
+        <li><a href="tel:+601158121239">Call +601158121239</a></li>
+        <li><a href="mailto:sales@niagova.com">sales@niagova.com</a></li>
+        <li>Kampung Pandan, 2A Lorong Delapan, 55100 Kuala Lumpur</li>
+        <li>9.00am - 6.00pm</li>
+        <li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Kampung%20Pandan%2C%202A%20Lorong%20Delapan%2C%2055100%20Kuala%20Lumpur" target="_blank" rel="noopener">Get directions to the shop</a></li>
+        
+        
+        
+      </ul>
+      <p class="footer-note">Parts, part numbers, fitment lists, prices and stock on this page are sample content. Photos show the type of part, not the exact item. Vehicle names are used only to describe fitment.</p>
+      <p class="footer-credit"><a href="https://niagova.com/" target="_blank" rel="noopener">Website by Niagova</a></p>
+    </div>
+  </footer>
+
+  <dialog class="sheet sheet-left" id="picker" aria-labelledby="picker-title">
+    <div class="sheet-head">
+      <h2 id="picker-title">Choose your car</h2>
+      <button class="icon-button" type="button" data-action="close-sheet" aria-label="Close car selector">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+    <div class="sheet-body" id="picker-body"></div>
+    <div class="sheet-foot" id="picker-foot"></div>
+  </dialog>
+
+  <dialog class="sheet" id="part-sheet" aria-labelledby="part-title">
+    <div class="sheet-head">
+      <h2 id="part-title">Part details</h2>
+      <button class="icon-button" type="button" data-action="close-sheet" aria-label="Close part details">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+    <div class="sheet-body" id="part-body"></div>
+    <div class="sheet-foot" id="part-foot"></div>
+  </dialog>
+
+  <dialog class="sheet" id="enquiry" aria-labelledby="enquiry-title">
+    <div class="sheet-head">
+      <h2 id="enquiry-title" tabindex="-1">Your parts enquiry</h2>
+      <button class="icon-button" type="button" data-action="close-sheet" aria-label="Close enquiry">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+    <div class="sheet-body">
+      <div id="enquiry-car"></div>
+      <div class="field" id="enquiry-note-field">
+        <label for="enquiry-note">Plate number or chassis note (optional)</label>
+        <textarea id="enquiry-note" rows="2" maxlength="200" autocomplete="off" placeholder="WXY 1234, or last 6 of the chassis number"></textarea>
+      </div>
+      <div id="enquiry-lines"></div>
+    </div>
+    <div class="sheet-foot" id="enquiry-foot">
+      <p class="enquiry-total"><span>Estimated total</span><strong id="enquiry-total"></strong></p>
+      <p class="enquiry-promise">We confirm fitment and stock before you pay. Nothing is charged here.</p>
+      <a class="btn btn-primary" id="enquiry-send" href="https://wa.me/601158121239" target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+        Send on WhatsApp
+      </a>
+    </div>
+  </dialog>
+
+  <div class="visually-hidden" id="live" aria-live="polite" role="status"></div>
+</body>
+</html>

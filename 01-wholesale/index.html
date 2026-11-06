@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-MY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="build-version" content="__BUILD_VERSION__">
+  <meta name="author" content="Niagova">
+  <title>Supplier Hub | Wholesale groceries by the carton</title>
+  <meta name="description" content="Reorder rice, oil, drinks, canned food, noodles and household stock from Supplier Hub by the carton, then send the order on WhatsApp.">
+  <link rel="canonical" href="https://demo-supplier.niagova.com/01-wholesale/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Supplier Hub | Wholesale groceries by the carton">
+  <meta property="og:description" content="Reorder rice, oil, drinks, canned food, noodles and household stock from Supplier Hub by the carton, then send the order on WhatsApp.">
+  <meta property="og:url" content="https://demo-supplier.niagova.com/01-wholesale/">
+  <meta property="og:image" content="https://demo-supplier.niagova.com/01-wholesale/images/hero.webp">
+  <meta name="theme-color" content="#F7F9E8">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23F7F9E8'/%3E%3Cpath d='M9 0v32M0 10h32M0 18h32M0 26h32' stroke='%231B2F8F' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css?v=__BUILD_VERSION__">
+  <script src="index.js?v=__BUILD_VERSION__" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#sheet">Skip to the order sheet</a>
+
+  <header class="masthead" id="top">
+    <p class="masthead-name"><a href="#top">Supplier Hub</a></p>
+    <form class="find" role="search" id="findForm">
+      <label class="find-label" for="findInput">Find item</label>
+      <input class="find-input" id="findInput" type="search" enterkeyhint="search" autocomplete="off" placeholder="beras, sardin, C02">
+      <button class="find-clear" id="findClear" type="button" aria-label="Clear search" hidden>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </form>
+  </header>
+
+  <div class="layout">
+    <main class="book" id="main">
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-text">
+          <h1 id="heroTitle">Wholesale groceries for kedai runcit</h1>
+          <p class="hero-lead">Order by the carton or bag, then send it on WhatsApp.</p>
+        </div>
+        <img class="hero-photo" src="images/hero.webp" width="933" height="1400" fetchpriority="high" decoding="async"
+          alt="A shop owner with a clipboard checks brown cartons on steel racks in a warehouse aisle, with rice sacks on pallets and a lorry outside the roller door.">
+        <p class="hero-terms"><strong>Sample terms:</strong> <span id="termsText">order by 4pm, delivered the next working day, Monday to Saturday. Minimum order RM 300.00.</span></p>
+      </section>
+
+      <section class="reorder" id="reorder" aria-label="Reorder last order">
+        <p class="reorder-text" id="reorderText">Send an order once and you can repeat it from here in one tap.</p>
+        <button class="btn btn-line" id="reorderBtn" type="button" hidden>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.6-5.9L4 8.5M4 4v4.5h4.5"/></svg>
+          Reorder last order
+        </button>
+      </section>
+
+      <nav class="tabs" id="tabs" aria-label="Order sheet sections">
+        <button class="tabs-find" id="tabsFind" type="button" aria-label="Search items">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        </button>
+        <div class="tabs-scroll" id="tabsScroll"></div>
+      </nav>
+
+      <div class="sheet" id="sheet" tabindex="-1">
+        <noscript><p class="sheet-noscript">This order sheet needs JavaScript. Message us on WhatsApp at +601158121239 to order.</p></noscript>
+        <div id="sheetBody"></div>
+        <div class="no-match" id="noMatch" hidden>
+          <h2 class="no-match-title">No item matches <span id="noMatchTerm"></span></h2>
+          <p>Check the spelling or try the Malay name, such as beras or minyak.</p>
+          <div class="no-match-actions">
+            <button class="btn btn-line" id="noMatchClear" type="button">Clear search</button>
+            <a class="btn btn-line" id="noMatchAsk" href="https://wa.me/601158121239" target="_blank" rel="noopener">Ask for it on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <section class="niagova-band" aria-labelledby="niagova-title">
+  <div class="niagova-band-inner">
+    <div>
+      <img src="images/niagova-logo-on-dark.svg" alt="Niagova" width="150" height="36" loading="lazy">
+      <p class="niagova-band-kicker">This demo website is built by Niagova</p>
+      <h2 id="niagova-title">Want a website like this for your business?</h2>
+      <p class="niagova-band-copy">Websites, booking systems and business apps for Malaysian SMEs. Every package and price is on niagova.com.</p>
+    </div>
+    <a class="niagova-band-cta" href="https://niagova.com/#pricing" target="_blank" rel="noopener">View Niagova packages <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<footer class="foot">
+        <p class="foot-name">Supplier Hub</p>
+        <ul class="foot-list">
+          <li><a href="https://wa.me/601158121239" target="_blank" rel="noopener">WhatsApp +601158121239</a></li>
+          <li><a href="tel:+601158121239">Call +601158121239</a></li>
+          <li><a href="mailto:sales@niagova.com">sales@niagova.com</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Kampung%20Pandan%2C%202A%20Lorong%20Delapan%2C%2055100%20Kuala%20Lumpur" target="_blank" rel="noopener">Kampung Pandan, 2A Lorong Delapan, 55100 Kuala Lumpur</a></li>
+          <li>9.00am - 6.00pm</li>
+          
+          
+          
+        </ul>
+        <p class="foot-note">Products, prices, stock and terms on this page are sample content.</p>
+        <p class="foot-credit"><a href="https://niagova.com/" target="_blank" rel="noopener">Website by Niagova</a></p>
+      </footer>
+    </main>
+
+    <aside class="side" aria-label="Your order">
+      <dialog class="panel" id="panel" aria-labelledby="panelTitle">
+        <div class="panel-head">
+          <h2 class="panel-title" id="panelTitle" tabindex="-1" autofocus>Your order</h2>
+          <button class="panel-close" id="panelClose" type="button" aria-label="Close order and go back to the sheet">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </div>
+
+        <div class="panel-scroll">
+          <div class="notice notice-panel" id="panelNotice" role="status" hidden></div>
+
+          <div class="panel-empty" id="panelEmpty">
+            <p class="panel-empty-title">Nothing on this order yet</p>
+            <p id="panelEmptyText">Key in quantities on the sheet and they appear here.</p>
+            <button class="btn btn-line" id="panelReorder" type="button" hidden>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.6-5.9L4 8.5M4 4v4.5h4.5"/></svg>
+              Reorder last order
+            </button>
+          </div>
+
+          <div class="panel-sent" id="panelSent" hidden>
+            <p class="stamp stamp-ink">Sent to WhatsApp</p>
+            <p>WhatsApp opened with your order. Press send there to finish.</p>
+            <p>This order is saved, so you can repeat it with Reorder last order.</p>
+            <div class="panel-sent-actions">
+              <a class="btn btn-line" id="sentLink" href="https://wa.me/601158121239" target="_blank" rel="noopener">Open WhatsApp again</a>
+              <button class="btn btn-line" id="sentDone" type="button">Start a new order</button>
+            </div>
+          </div>
+
+          <form class="order-form" id="orderForm" novalidate hidden>
+            <ul class="order-lines" id="orderLines"></ul>
+            <button class="text-btn" id="clearOrder" type="button">Clear this order</button>
+
+            <p class="min-check" id="minCheck" tabindex="-1"></p>
+
+            <fieldset class="days">
+              <legend>Delivery day</legend>
+              <div class="days-grid" id="dayOptions"></div>
+            </fieldset>
+
+            <div class="field">
+              <label for="shopName">Shop name</label>
+              <input id="shopName" name="shop" type="text" autocomplete="organization" enterkeyhint="next" aria-describedby="shopError" required>
+              <p class="field-error" id="shopError" hidden>Add your shop name so we know whose order this is.</p>
+            </div>
+
+            <div class="field">
+              <label for="orderNotes">Notes for the driver or office (optional)</label>
+              <textarea id="orderNotes" name="notes" rows="2" autocomplete="off"></textarea>
+            </div>
+          </form>
+        </div>
+
+        <div class="panel-foot" id="panelFoot" hidden>
+          <p class="panel-total"><span id="panelCount">No items</span> <strong id="panelTotal">RM 0.00</strong></p>
+          <button class="btn btn-send" id="sendBtn" type="button">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.4-4.6A8 8 0 1 1 8.6 18.6z"/></svg>
+            Send order on WhatsApp
+          </button>
+        </div>
+      </dialog>
+    </aside>
+  </div>
+
+  <section class="slip" id="slip" aria-label="Order total">
+    <div class="notice notice-page" id="pageNotice" role="status" hidden></div>
+    <p class="slip-min" id="slipMin" hidden></p>
+    <div class="slip-row">
+      <div class="slip-sums">
+        <p class="slip-count" id="slipCount">No items yet</p>
+        <p class="slip-total" id="slipTotal">RM 0.00</p>
+      </div>
+      <button class="btn btn-review" id="reviewBtn" type="button" aria-haspopup="dialog">Review order</button>
+    </div>
+  </section>
+
+  <p class="visually-hidden" id="live" aria-live="polite"></p>
+</body>
+</html>
